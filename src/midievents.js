@@ -143,6 +143,7 @@ MIDIEvents.createParser = function midiEventsCreateParser(
       };
       // Read the eventTypeByte
       eventTypeByte = stream.readUint8();
+      event.eventTypeByte = eventTypeByte;
       if (0xf0 === (eventTypeByte & 0xf0)) {
         // Meta events
         if (eventTypeByte === MIDIEvents.EVENT_META) {
